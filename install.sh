@@ -1,14 +1,9 @@
 #!/bin/bash
 
-#1 liner: wget https://raw.github.com/Davokadoh/install.sh | sudo sh
-
-su -
 apt install sudo openssh-server ufw libpam-pwquality vim wget net-tools
 adduser jleroux sudo
 
-
 #SUDO
-
 mkdir /var/log/sudo
 echo '
 Defaults	passwd_tries=3
@@ -39,10 +34,10 @@ addgroup user42
 adduser jleroux user42
 
 #CRON
-sudo wget monitoring.sh
+wget monitoring.sh
 touch tmpfile
 echo '*/10 * * * * sh /usr/local/monitoring.sh' > tmpfile
 crontab -u root tmpfile
 rm tmpfile
 
-reboot
+reboot now
