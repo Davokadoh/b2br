@@ -37,7 +37,7 @@ sudo service lighttpd force-reload
 
 sudo cd
 sudo wget https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz
-sudo tar xzvf unrealircd-6.0.3.tar.gz
+sudo tar -xzvf unrealircd-6.0.3.tar.gz
 sudo cd unrealircd-6.0.3
 ./Config
 make
