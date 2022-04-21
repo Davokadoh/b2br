@@ -1,4 +1,4 @@
-apt install lighttpd mariadb-server php-fastcgi php-mysql
+apt install lighttpd mariadb-server php-cgi php-mysql
 
 ufw allow 80
 echo "Starting mysql_secure_installation"
