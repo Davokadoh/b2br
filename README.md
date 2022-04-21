@@ -21,4 +21,4 @@ Download and run script. //Not tested yet!
 ## Bonus Step.
 Download and run script. //Not tested yet!
 
-	sudo su -c "bash <(wget -qO- https://raw.githubusercontent.com/Davokadoh/b2br/main/install.sh)" root
+	sudo su -c "bash <(wget -qO- https://raw.githubusercontent.com/Davokadoh/b2br/main/bonus.sh)" root
