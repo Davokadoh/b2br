@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#1 liner: wget https://raw.github.com/Davokadoh/install.sh | sudo sh
+
 su -
 apt install sudo openssh-server ufw libpam-pwquality vim wget net-tools
 adduser jleroux sudo
