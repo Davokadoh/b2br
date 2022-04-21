@@ -1,6 +1,6 @@
 # b2br
 Inspired by
-https://github.com/enolaihssane/Born2beroot/blob/main/README.md
+https://github.com/enolaihssane/Born2beroot
 
 ## Step 1.
 Login as super user.
