@@ -16,9 +16,9 @@ Install wget.
 ## Step 3.
 Download and run script. //Not tested yet!
 
-	bash <(wget -q0- https://raw.githubusercontent.com/Davokadoh/b2br/main/install.sh)
+	sudo su -c "bash <(wget -qO- https://raw.githubusercontent.com/Davokadoh/b2br/main/install.sh)" root
 
 ## Bonus Step.
 Download and run script. //Not tested yet!
 
-	bash <(wget -q0- https://raw.githubusercontent.com/Davokadoh/b2br/main/install.sh)
+	sudo su -c "bash <(wget -qO- https://raw.githubusercontent.com/Davokadoh/b2br/main/install.sh)" root
