@@ -15,7 +15,7 @@ mariadb -e "FLUSH PRIVILEGES;"
 echo "Changing directory"
 cd /var/www/html
 echo "Downloading Wordpress"
-wget http://wordpress.org/latest.tar.gz -P /var/www/html
+wget http://wordpress.org/latest.tar.gz
 echo "Extracting archive"
 tar -xzvf /var/www/html/latest.tar.gz
 echo "Deleting archive"
@@ -36,7 +36,7 @@ lighty-enable-mod fastcgi-php
 service lighttpd force-reload
 
 cd
-wget --trust-server-names https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz
+wget https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz
 tar xzvf unrealircd-6.0.3.tar.gz
 cd unrealircd-6.0.3
 ./Config
