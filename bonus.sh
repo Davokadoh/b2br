@@ -1,4 +1,4 @@
-apt install lighttpd mariadb-server php-cgi php-mysql
+apt install lighttpd mariadb-server php-cgi php-mysql build-essential pkg-config libssl-dev libpcre2-dev libargon2-0-dev libsodium-dev libc-ares-dev libcurl4-openssl-dev
 
 ufw allow 80
 echo "Starting mysql_secure_installation"
@@ -12,10 +12,12 @@ echo "Granting privileges"
 mariadb -e "GRANT ALL ON mydb.* TO dumyuser@localhost WITH GRANT OPTION;"
 mariadb -e "FLUSH PRIVILEGES;"
 
+echo "Changing directory"
+cd /var/www/html
 echo "Downloading Wordpress"
 wget http://wordpress.org/latest.tar.gz -P /var/www/html
 echo "Extracting archive"
-tar -xzvf /var/www/html/latest.tar.gz /var/www/html
+tar -xzvf /var/www/html/latest.tar.gz
 echo "Deleting archive"
 rm /var/www/html/latest.tar.gz
 echo "Moving files"
@@ -33,8 +35,10 @@ lighty-enable-mod fastcgi
 lighty-enable-mod fastcgi-php
 service lighttpd force-reload
 
-git clone git@github.com:unrealircd/unrealircd.git
-cd unrealircd.git
+cd
+wget --trust-server-names https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz
+tar xzvf unrealircd-6.0.3.tar.gz
+cd unrealircd-6.0.3
 ./Config
 make
 make install
@@ -43,12 +47,10 @@ cp conf/examples/example.conf conf/unrealircd.conf
 modify unrealircd.conf
 ./unrealircd start
 
-
-
-me block
-<name-of-server>/irc.42.ch
-
-admin block
-"Joachim Leroux"
-"jojo"
-"lerouxjoachim@gmail.com"
+#me block
+#<name-of-server>/irc.42.ch
+#
+#admin block
+#"Joachim Leroux"
+#"jojo"
+#"lerouxjoachim@gmail.com"
