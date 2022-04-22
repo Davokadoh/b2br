@@ -30,19 +30,20 @@ echo "Inserting database and user names in config file"
 sudo sed -i -e "s/'database_name_here'/mydb/g" /var/www/html/wp-config.php
 sudo sed -i -e "s/'username_here'/dumyuser/g" /var/www/html/wp-config.php
 
-echo "Enabling lighttpd mods (?)"
+echo "Enabling lighttpd mods"
 sudo lighty-enable-mod fastcgi
 sudo lighty-enable-mod fastcgi-php
 sudo service lighttpd force-reload
 
-sudo cd
+cd /home/jleroux
 sudo wget https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz
 sudo tar -xzvf unrealircd-6.0.3.tar.gz
-sudo cd unrealircd-6.0.3
+cd unrealircd-6.0.3
+chmod u+rw unrealircd-6.0.3
 ./Config
 make
 make install
-sudo cd /home/jleroux/unrealircd
+cd /home/jleroux/unrealircd
 sudo cp conf/examples/example.conf conf/unrealircd.conf
 modify unrealircd.conf
 ./unrealircd start
