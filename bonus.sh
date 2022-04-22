@@ -45,7 +45,6 @@ make
 make install
 sudo su -c "cd /home/jleroux/unrealircd" root
 sudo cp conf/examples/example.conf conf/unrealircd.conf
-modify unrealircd.conf
 ./unrealircd start
 
 #me block
