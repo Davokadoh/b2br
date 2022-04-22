@@ -38,7 +38,7 @@ sudo service lighttpd force-reload
 cd /home/jleroux
 sudo wget https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz
 sudo tar -xf unrealircd-latest.tar.gz
-sudo chmod 777 unrealircd-6.0.3
+sudo chmod -R 777 unrealircd-6.0.3
 cd unrealircd-6.0.3
 ./Config
 make
