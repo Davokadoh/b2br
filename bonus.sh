@@ -35,15 +35,15 @@ sudo lighty-enable-mod fastcgi
 sudo lighty-enable-mod fastcgi-php
 sudo service lighttpd force-reload
 
-cd /home/jleroux
+sudo su -c "cd /home/jleroux" root
 sudo wget https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz
 sudo tar -xf unrealircd-latest.tar.gz
-cd unrealircd-6.0.3
-chmod u+rw unrealircd-6.0.3
+sudo su -c "unrealircd-6.0.3" root
+sudo chmod u+rw unrealircd-6.0.3
 ./Config
 make
 make install
-cd /home/jleroux/unrealircd
+sudo su -c "cd /home/jleroux/unrealircd" root
 sudo cp conf/examples/example.conf conf/unrealircd.conf
 modify unrealircd.conf
 ./unrealircd start
