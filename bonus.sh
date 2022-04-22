@@ -9,7 +9,7 @@ echo "End of mysql_secure_installation"
 echo "Creating database"
 sudo mariadb -e "CREATE DATABASE mydb;"
 echo "Granting privileges"
-sudo mariadb -e "GRANT ALL ON mydb.* TO dumyuser@localhost WITH GRANT OPTION;"
+sudo mariadb -e "GRANT ALL ON mydb.* TO dumyuser@localhost IDENTIFIED BY dumypass WITH GRANT OPTION;"
 sudo mariadb -e "FLUSH PRIVILEGES;"
 
 echo "Changing directory"
