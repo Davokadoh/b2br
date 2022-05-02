@@ -1,6 +1,7 @@
 sudo apt install lighttpd mariadb-server php-cgi php-mysql build-essential pkg-config libssl-dev libpcre2-dev libargon2-0-dev libsodium-dev libc-ares-dev libcurl4-openssl-dev
 
 sudo ufw allow 80
+sudo ufw allow 6667
 echo "Starting mysql_secure_installation"
 echo "Answer no (n) only to the first question"
 sudo mysql_secure_installation
