@@ -29,6 +29,7 @@ sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 echo "Inserting database and user names in config file"
 sudo sed -i -e "s/'database_name_here'/mydb/g" /var/www/html/wp-config.php
 sudo sed -i -e "s/'username_here'/dumyuser/g" /var/www/html/wp-config.php
+sudo sed -i -e "s/'username_here'/dumypass/g" /var/www/html/wp-config.php
 
 echo "Enabling lighttpd mods"
 sudo lighty-enable-mod fastcgi
