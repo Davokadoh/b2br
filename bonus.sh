@@ -9,7 +9,7 @@ echo "End of mysql_secure_installation"
 echo "Creating database"
 sudo mariadb -e "CREATE DATABASE mydb;"
 echo "Granting privileges"
-sudo mariadb -e "GRANT ALL ON mydb.* TO dumyuser@localhost IDENTIFIED BY dumypass WITH GRANT OPTION;"
+sudo mariadb -e "GRANT ALL ON mydb.* TO dumyuser@localhost IDENTIFIED BY 'dumypass' WITH GRANT OPTION;"
 sudo mariadb -e "FLUSH PRIVILEGES;"
 
 echo "Changing directory"
@@ -45,6 +45,13 @@ make
 make install
 cd /home/jleroux/unrealircd
 sudo cp conf/examples/example.conf conf/unrealircd.conf
+./unrealircd gencloak > tempfile
+sed '1,3d' tempfile
+sed '$d' tempfile
+sudo sed -i -e "s/'username_here'/dumyuser/g" conf/unrealircd.conf //edit cloak-kezs
+sudo sed -i -e "s/set.this.to.email.adress/lerouxjoachim@gmail.com/g" conf/unrealircd.conf
+sudo sed -i -e "s/oper bobsmith/joachimleroux/g" conf/unrealircd.conf
+sudo sed -i -e "s/password "test"/pasword "1234"/g" conf/unrealircd.conf
 ./unrealircd start
 
 #me block
